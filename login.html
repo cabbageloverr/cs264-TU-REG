@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/login_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <title>Login</title>
+  </head>
+  <body onload="loadDoc()">
+    <div class="header">
+                    <div class="header_pic">
+                        <img src="/img/TUlogo.png" alt="logo">
+                    </div>
+
+                    <div class="header_info">
+                        <div class="header_infoth">
+                            <h1>สำนักงานทะเบียนนักศึกษา</h1>
+                        </div>
+                        <div class="header_infoen">
+                            <h1>OFFICE OF REGISTRATION</h1>
+                        </div>
+                    </div>
+
+                </div>
+    <div class="container">
+      <div class="wrapper">
+        <div class="title"><span>Sign in (นักศึกษา/บุคลากร)</span></div>
+        <form action="#">
+          <div class="row">
+            <i class="fas fa-user"></i>
+            <input id="searchUserName" type="text" placeholder="Email or Username" required>
+          </div>
+          <div class="row">
+            <i class="fas fa-lock"></i>
+            <input id="searchPassword" type="password" placeholder="Password" required>
+          </div>
+          <div class="row button">
+            <input type="button" onclick="search()" value="Login">
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="footer">
+      <h4>สงวนสิทธิเฉพาะสำนักงานทะเบียนมหาวิทยาลัยธรรมศาสตร์</h4>
+    </div>
+  </body>
+  <script src='js/login.js'></script>
+</html>

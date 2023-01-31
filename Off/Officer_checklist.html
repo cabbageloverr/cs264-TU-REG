@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Officer Checklist</title>
+    <link rel="stylesheet" href="/css/Officer_checklist.css">
+</head>
+<body onload="loadDoc()">
+    <div class="container"></div>
+
+        <section class="header_area">
+            
+                <div class="header">
+                    <div class="header_pic">
+                        <img src="/img/TUlogo.png" alt="logo">
+                    </div>
+
+                    <div class="header_info">
+                        <div class="header_infoth">
+                            <h1>สำนักงานทะเบียนนักศึกษา</h1>
+                        </div>
+                        <div class="header_infoen">
+                            <h1>OFFICE OF THE REGISTRAR</h1>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <div class="infoandtabs_area">
+            <aside class="tabs">
+                <div>
+                    <h2 onclick="search_main()">หน้าหลัก</h2>
+                </div>
+                <div id="tb-petition "class="tab-petition">
+                    <h2 onclick="search_form()">คำร้องของนักศึกษา</h2>
+                </div>
+                <div id="tb-petition "class="tab-petition" onclick="search_approve()">
+                    <h2>คำร้องที่อนุมัติแล้ว</h2>
+                </div>
+                <div id="tb-petitionback"class="tab-petitionback">
+                    <h2 onclick="logout()">ออกจากระบบ</h2>
+                </div>
+            </aside>
+
+            <section class="info_area">
+                <div class="officer">
+                        <h3 id="adviser"> คำร้องของนักศึกษา </h3>
+                </div>
+                <div>
+                    <table id="form">
+                        <tr>
+                            <th>คำร้องของนักศึกษา</th>
+                            <th>สถานะ</th>
+                        </tr>
+                    </table> 
+                </div> 
+            </section>
+        </div>
+    </div>
+</body>
+<script src='js/Offcheck_form.js'></script>
+</html>

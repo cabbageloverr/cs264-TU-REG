@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 1</title>
+    <link rel="stylesheet" href="/css/stdcheck_Style.css">
+</head>
+<body onload="loadForm()">
+    <div class="container"></div>
+
+        <section class="header_area">
+            
+                <div class="header">
+                    <div class="header_pic">
+                        <img src="/img/TUlogo.png" alt="logo">
+                    </div>
+
+                    <div class="header_info">
+                        <div class="header_infoth">
+                            <h1>สำนักงานทะเบียนนักศึกษา</h1>
+                        </div>
+                        <div class="header_infoen">
+                            <h1>OFFICE OF REGISTRATION</h1>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <div class="infoandtabs_area">
+            <aside class="tabs">
+                <div id="tb-main"class="tab-main" onclick="main_page()">
+                    <h2>หน้าหลัก</h2>
+                </div>
+                <div id="tb-petition"class="tab-petition" onclick="create_form()">
+                    <h2>คำร้องเพิ่ม-ถอนรายวิชา</h2>
+                </div>
+                <div id="tb-contact "class="tab-contact" onclick="inbox()">
+                    <h2>ข้อความ</h2>
+                </div>
+                <div id="tb-out"class="tab-out" onclick="logout()">
+                    <h2>ออกจากระบบ</h2>
+                </div>
+            </aside>
+
+            <section class="infostatus" id="dataList">
+            </section>
+        </div>
+    </div>
+</body>
+<script src='js/Scheck_form.js'></script>
+</html>

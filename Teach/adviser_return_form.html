@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adviser Return Form</title>
+    <link rel="stylesheet" href="/css/adviser_return_form.css">
+</head>
+<body onload="loadDoc()">
+    <div class="container"></div>
+
+        <section class="header_area">
+            
+                <div class="header">
+                    <div class="header_pic">
+                        <img src="/img/TUlogo.png" alt="logo">
+                    </div>
+
+                    <div class="header_info">
+                        <div class="header_infoth">
+                            <h1>สำนักงานทะเบียนนักศึกษา</h1>
+                        </div>
+                        <div class="header_infoen">
+                            <h1>OFFICE OF THE REGISTRAR</h1>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <div class="infoandtabs_area">
+            <aside class="tabs">
+                <div onclick="search_main()">
+                    <h2>หน้าหลัก</h2>
+                </div>
+                <div id="tb-petition "class="tab-petition" onclick="search_check()">
+                    <h2>คำร้องของนักศึกษา</h2>
+                </div>
+                <div id="tb-petitionback"class="tab-petitionback" onclick="search_response()">
+                    <h2>ตอบกลับคำร้องของนักศึกษา</h2>
+                </div>
+                <div>
+                    <h2 onclick="logout()">ออกจากระบบ</h2>
+                </div>
+            </aside>
+
+            <section class="info_area">
+                <div    class="adteachreturn ">
+                    
+                        <h3 id="advisereturn"> ตอบกลับคำร้องของนักศึกษาไม่ผ่านการอนุมัติ</h3>
+                </div>
+                
+                <div style="padding-top: 1em;"> 
+                <section class="big">
+                    <div>
+                        <p class = "top" >คำร้องขอเพิ่ม-ถอน รายวิชา
+                        <br>
+                            คณะวิทยาศาสตร์และเทคโนโลยี มหาวิทยาลัยธรรมศาสตร์
+                        
+                        </p>
+                    </div>
+
+                    <div >
+                        <section class = "medium" >
+                            <div id="info">
+                            </div>
+                        </section>
+                    </div>
+
+                     </section>
+                </div>
+                <div style="padding-top: 1.5cm;">
+                <textarea class ="comment" id ="ct" ></textarea>
+                <div style="padding-top: 1.2cm;">
+                <button class="submit" name="submit" value="Send" onclick="doneMessage()">ยืนยันการตอบกลับคำร้อง  </div>
+            </div>
+            </section>
+            
+            <div>
+              
+         
+        </div>
+        
+        
+    </div>
+   
+</body>   
+<script src='js/Tresponse_form_std.js'></script>
+</html>

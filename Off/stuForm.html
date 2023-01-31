@@ -1,0 +1,142 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<font face="AnsanaUPC,Ms sans Serif,Tahoma"><title>คำร้องนักศึกษา</title>
+	</head>
+	<style>
+		.tab{
+			display: inline-block;
+			margin-left: 40px;
+		}
+		.space{
+			display: inline-block;
+			margin-left: 10px;
+		}
+		.space1{
+			display: inline-block;
+			margin-left: 1px;
+		}
+		.big
+		{
+			line-height: 1.5;
+		}
+	</style>
+
+	<body onload="loadDoc()">
+		<h2  style="text-align:center;" style="font-family:verdana;">คำร้องนักศึกษา</h2>
+
+		<h3 style="text-align:center; "style="font-family:courier;">โครงการปริญญาตรี  ภาควิชาวิทยาการคอมพิวเตอร์ <br> คณะวิทยาศาสตร์และเทคโนโลยี มหาวิทยาลัยธรรมศาสตร์ ศูนย์รังสิต</h3>
+		<p style ="text-align:right;">
+			<label for="inputDate" id="inputDate" name="inputDate">วันที่ยื่นคำร้อง</label>
+
+					</p>
+
+		<p class="big">
+			<form ><b>
+				<label for="subjectName" id="subjectName" name="subjectName">เรื่อง </label>
+				<br>
+				<label for="destinationName" id="destinationName" name="destinationName">เรียน</label>
+				</b><br><br>
+			</form>
+		
+
+		
+			<p style="text-align:left; ">
+				<font face="AnsanaUPC,Ms sans Serif,Tahoma" size="3">
+				<span class="tab"></span><span class="tab"></span>
+				<label for="nameTitle" id="nameTitle" name="nameTitle">ข้าพเจ้า</label>
+				<label for="firstname" id="firstname" name="firstname">ชื่อ</label>
+				<label for="lastname" id="lastname" name="lastname">นามสกุล</label>
+				<span class="tab"></span>
+				<label for="id" id="id" name="id">เลขทะเบียน</label>
+				<br>
+				<span class="tab"></span>
+				<label for="year" id="year" name="year">ชั้นปีการศึกษา</label><span class="tab"></span>
+				<label for="major" id="major" name="major">สาขาวิชา</label><span class="tab"></span>
+				<label for="AdvisorName" id="AdvisorName" name="AdvisorName">อาจารย์ที่ปรึกษา</label>
+				<span class="tab"></span>
+				<br>
+				<label for="houseNumber" id="houseNumber" name="houseNumber">ที่อยู่ที่ติดต่อได้เลขที่</label>
+				<span class="tab"></span>
+				<label for="moo" id="moo" name="moo">หมู่ที่</label><span class="tab"></span>
+				<label for="subDistrict" id="subDistrict" name="subDistrict">แขวง/ตำบล</label><span class="tab"></span>
+				<label for="district" id="district" name="district">อำเภอ</label><span class="tab"></span>
+				<label for="province" id="province" name="province">จังหวัด</label><span class="tab"></span>
+				<label for="postalCode" id="postalCode" name="postalCode">รหัสไปรษณีย์</label><span class="tab"></span>
+				<label for="phoneNumber" id="phoneNumber" name="phoneNumber">โทรศัพท์มือถือ</label><span class="tab"></span>
+				<br>
+				<label for="houseNumberC" id="houseNumberC" name="houseNumberC">โทรศัพท์บ้าน(ถ้ามี)</label><span class="tab"></span>
+				<br><br>
+
+				<p>
+					<b>ประสงค์จะยื่นคำร้อง</b>
+					<br>
+					<b>จดทะเบียนเพิ่มรายวิชา</b>
+					<label for="AddYear" id="AddYear">ภาคการศึกษาที่</label>
+					<br>
+					<label for="idsubject" class="inputtable" id="codesubject1">รหัสวิชา</label><span class="tab"></span>
+					<label for="subject1" id="subject1">ชื่อวิชา</label><span class="tab"></span>
+					<label for="section1" id="section1">Section</label><span class="tab"></span>
+					<label for ="datetime1" id="datetime1">วันเวลา</label><span class="tab"></span>
+					<label for="value1" id="value1">หน่วยกิต</label><span class="tab"></span>
+					<label for="teacher1" id="teacher1">ชื่อผู้สอน</label><span class="tab"></span>
+					<label for="tapprove1" id="tapprove1">ผู้สอนอนุญาต</label></br>
+					<label id="AddSubject"></label>
+
+					<br>
+					<b>จดทะเบียนถอนรายวิชา</b>
+					<label for="DropYear" id="DropYear">ภาคการศึกษาที่</label>
+					<br>
+					<label for="idsubject" class="inputtable" id="codesubject1">รหัสวิชา</label><span class="tab"></span>
+					<label for="subject1" id="subject1">ชื่อวิชา</label><span class="tab"></span>
+					<label for="section1" id="section1">Section</label><span class="tab"></span>
+					<label for ="datetime1" id="datetime1">วันเวลา</label><span class="tab"></span>
+					<label for="value1" id="value1">หน่วยกิต</label><span class="tab"></span>
+					<label for="teacher1" id="teacher1">ชื่อผู้สอน</label><span class="tab"></span>
+					<label for="tapprove1" id="tapprove1">ผู้สอนอนุญาต</label></br>
+					<label id="DropSubject"></label>
+
+					<br>
+					<b>ขอจดทะเบียนศึกษารายวิชาข้ามโครงการ</b>
+					<label for="CrossYear" id="CrossYear">ภาคการศึกษาที่</label>
+					<br>
+					<label for="idsubject" class="inputtable" id="codesubject1">รหัสวิชา</label><span class="tab"></span>
+					<label for="subject1" id="subject1">ชื่อวิชา</label><span class="tab"></span>
+					<label for="section1" id="section1">Section</label><span class="tab"></span>
+					<label for ="datetime1" id="datetime1">วันเวลา</label><span class="tab"></span>
+					<label for="value1" id="value1">หน่วยกิต</label><span class="tab"></span>
+					<label for="teacher1" id="teacher1">ชื่อผู้สอน</label><span class="tab"></span>
+					<label for="tapprove1" id="tapprove1">ผู้สอนอนุญาต</label></br>
+					<label id="CrossSubject"></label>
+					<br>
+					<b>ขอลาออก</b>
+					<label for="resignYear" id="resignYear">ตั้งแต่ภาคการเรียน-ปี</label>
+
+					<p><b>อื่นๆ</b></p>
+					<label for="other" id="other">(โปรดระบุ)</label>
+					<br><br>
+					<label for="reason" id="reason" name="reason"><b>เหตุผลที่ยื่นคำร้องเนื่องจาก</b></label>
+					<br><br>
+					<span class="tab"></span><span class="tab"></span>
+					จึงเรียนมาเพื่อโปรดพิจารณาอนุมัติและดำเนินการต่อไปด้วย  จักเป็นพระคุณยิ่ง
+					<br><br>
+					<p style ="text-align:center;">ขอแสดงความนับถือ
+					</p>
+	
+					<p style ="text-align:right;">
+						<label for="nameTitle" id="nameTitle" name="nameTitle">ลงชื่อ</label>
+						<label for="firstname" id="firstname2" name="firstname"></label>
+						<label for="lastname" id="lastname2" name="lastname"></label>(นักศึกษา)
+
+					</p>
+					
+				</p>
+
+
+			</p>
+		</p>
+	</body>
+	</font>
+	</font>
+<script src='js/stuForm.js'></script>
+</html>

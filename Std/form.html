@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+	<meta charset="UTF-8">
+	<title>แบบฟอร์มคำร้อง</title>
+	<script src="js/FormController.js"></script>
+	<link rel="stylesheet" href="/css/form.css">
+</head>
+<body>
+
+	<body>
+		<!-- Header -->
+		<div class="container">
+	
+			<section class="header_area">
+				
+					<div class="header">
+						<div class="header_pic">
+							<img src="/img/TUlogo.png" alt="logo">
+						</div>
+	
+						<div class="header_info">
+							<div class="header_infoth">
+								<h1>สำนักงานทะเบียนนักศึกษา</h1>
+							</div>
+							<div class="header_infoen">
+								<h1>OFFICE OF REGISTRATION</h1>
+							</div>
+						</div>
+	
+					</div>
+				</div>
+			</section>
+			<div class="infoandtabs_area">
+				<aside class="tabs">
+					<div id="tb-main"class="tab-main" onclick="main_page()">
+	                    <h2>หน้าหลัก</h2>
+	                </div>
+	                <div id="tb-petition"class="tab-petition" onclick="checkAll()">
+	                    <h2>คำร้องทั้งหมด</h2>
+	                </div>
+	                <div id="tb-contact "class="tab-contact" onclick="inbox()">
+	                    <h2>ข้อความ</h2>
+	                </div>
+	                <div id="tb-out"class="tab-out" onclick="logout()">
+	                    <h2>ออกจากระบบ</h2>
+	                </div>
+				</aside>
+	
+				<section class="info_area">
+					
+<div class="formhead">
+	<h3 class=formtitle style="text-align: center; font-size: 25px;" ><b>แบบฟอร์มคำร้องขอเพิ่ม-ถอน รายวิชา</b></h3>
+	</div>
+
+	<!-- Main -->
+	<div class=forminfo>
+		<!--<h3 style="font-size: 25px;">วันที่ทำการกรอกฟอร์ม</h3>-->
+		<h4 class="col5-100" style="text-align: right;">วันที่กรอกฟอร์ม*
+		<input type="date" id="inputDate" name="inputDate" min="2021-09-01" max="2100-12-31" required="" ></h4>
+		<label for="subjectName"><b>เรื่อง</b></label>
+		<input type="text" id="subjectName" name="subjectName" required="" ><br>
+		<label for="destinationName"><b>เรียน</b></label>
+		<input type="text" id="destinationName" name="destinationName" required="" >
+		<br><br>
+
+<div class="infohead">
+		<h3>ข้อมูลส่วนตัว</h3>
+</div>
+			<select id="nameTitle" name="nameTitle" required="">
+			  	<option value="นางสาว">นางสาว</option>
+			  	<option value="นาง">นาง</option>
+			  	<option value="นาย">นาย</option>
+			</select>
+			<label for="firstname">ชื่อ*</label>
+			<span title="ใส่ชื่อจริงของคุณ Enter your first name">
+				<input type="text" id="firstname" name="firstname" required="" >
+			</span>
+
+			<label for="lastname">นามสกุล*</label>
+
+			<span title="ใส่นามสกุลของคุณ Enter your last name">
+				<input type="text" id="lastname" name="lastname" required="">
+			</span>
+	
+
+			<label for="id">เลขทะเบียนนักศึกษา*</label>
+
+			<span title="ใส่เลขทะเบียนนักศึกษา 10 หลักของคุณ">
+				<input style="text-align: center;"  type="text" id="id" name="id" required="" placeholder="xxxxxxxxxx">
+			</span><br><br>
+			<label for="year">ชั้นปีการศึกษา*</label>
+
+			<select id="year" name="year" required="">
+			  	<option value="1">ชั้นปีที่ 1</option>
+			  	<option value="2">ชั้นปีที่ 2</option>
+			  	<option value="3">ชั้นปีที่ 3</option>
+			  	<option value="4">ชั้นปีที่ 4</option>
+			  	<option value="5">ชั้นปีที่ 5</option>
+			  	<option value="6">ชั้นปีที่ 6</option>
+			  	<option value="7">ชั้นปีที่ 7</option>
+			</select>
+
+		<label for="major">สาขาวิชา*</label>
+		<select id="major" name="major" required="">
+		  	<option value="สาขาวิชาวิทยาการคอมพิวเตอร์">สาขาวิชาวิทยาการคอมพิวเตอร์ - COM</option>
+		  	<option value="สาขาวิชาวิทยาการคอมพิวเตอร์ประยุกต์">สาขาวิชาวิทยาการคอมพิวเตอร์ประยุกต์ - COM - PE</option>
+		</select>
+		<label for="AdvisorName">อาจารย์ที่ปรึกษา*</label>
+		<select id="AdvisorName" name="AdvisorName" required="">
+			<option value="none">----------</option>
+		  	<option value="ผศ. ดร.กษิดิศ ชาญเชี่ยว">ผศ. ดร.กษิดิศ ชาญเชี่ยว</option>
+		  	<option value="ผศ. ดร.วิลาวรรณ รักผกาวงศ์">ผศ. ดร.วิลาวรรณ รักผกาวงศ์</option>
+		  	<option value="ผศ. ดร.วนิดา พฤทธิวิทยา">ผศ. ดร.วนิดา พฤทธิวิทยา</option>
+		  	<option value="ผศ. ดร.ประภาพร รัตนธำรง">ผศ. ดร.ประภาพร รัตนธำรง</option>
+		  	<option value="ผศ. ดร.ทรงศักดิ์ รองวิริยะพานิช">ผศ. ดร.ทรงศักดิ์ รองวิริยะพานิช</option>
+		  	<option value="รศ. ดร.เยาวดี เต็มธนาภัทร์">รศ. ดร.เยาวดี เต็มธนาภัทร์</option>
+		  	<option value="อ.นุชชากร งามเสาวรส">อ.นุชชากร งามเสาวรส</option>
+		  	<option value="ผศ. ดร.มนวรัตน์ ผ่องไพบูลย์">ผศ. ดร.มนวรัตน์ ผ่องไพบูลย์</option>
+		  	<option value="ผศ. ดร.เด่นดวง ประดับสุวรรณ">ผศ. ดร.เด่นดวง ประดับสุวรรณ</option>
+		  	<option value="ผศ. ดร.วิรัตน์ จารีวงศ์ไพบูลย์">ผศ. ดร.วิรัตน์ จารีวงศ์ไพบูลย์</option>
+		  	<option value="ผศ. ดร.ธนาธร ทะนานทอง">ผศ. ดร.ธนาธร ทะนานทอง</option>
+		  	<option value="อ. ดร.ปกป้อง ส่องเมือง">อ. ดร.ปกป้อง ส่องเมือง</option>
+		  	<option value="อ.สิริกันยา นิลพานิช">อ.สิริกันยา นิลพานิช</option>
+		  	<option value="ผศ. ดร.ปกรณ์ ลี้สุทธิพรชัย">ผศ. ดร.ปกรณ์ ลี้สุทธิพรชัย</option>
+		  	<option value="ผศ. ดร.อรจิรา สิทธิศักดิ์">ผศ. ดร.อรจิรา สิทธิศักดิ์</option>
+		  	<option value="อ. ดร.ฐาปนา บุญชู">อ. ดร.ฐาปนา บุญชู</option>
+		  	<option value="อ. ดร.นุชจรินท์ อินต๊ะหล้า">อ. ดร.นุชจรินท์ อินต๊ะหล้า</option>
+		  	<option value="รศ. ดร.ณัฐธนนท์ หงส์วริทธิ์ธร">รศ. ดร.ณัฐธนนท์ หงส์วริทธิ์ธร</option>
+		  	<option value="ผศ. ดร.เสาวลักษณ์ วรรธนาภา">ผศ. ดร.เสาวลักษณ์ วรรธนาภา</option>
+		  	<option value="อ. ดร.ลัมพาพรรณ พันธ์ชูจิตร์">อ. ดร.ลัมพาพรรณ พันธ์ชูจิตร์</option>
+		</select><br><br><br>
+		<div class="infohead">
+		<h3>ที่อยู่ของนักศึกษา</h3>
+	</div>
+			<label for="houseNumber">บ้านเลขที่*</label>
+
+			<input type="text" id="houseNumber" name="houseNumber" required="">
+
+			<label for="moo">หมู่ที่</label>
+
+			<input type="text" id="moo" name="moo">
+
+			<label for="subDistrict">ตำบล*</label>
+
+			<input type="text" id="subDistrict" name="subDistrict" required="">
+
+			<label for="district">อำเภอ*</label>
+
+			<input type="text" id="district" name="district" required=""><br><br>
+
+			<label for="province">จังหวัด*</label>
+
+			<!--<input type="text" id="province" name="province" required=""><br>-->
+			<select id="province" name="province" required="">
+				<option value="none">------</option>
+			  	<option value="กรุงเทพมหานคร">กรุงเทพมหานคร</option>
+			  	<option value="กระบี่">กระบี่</option>
+			  	<option value="กาญจนบุรี">กาญจนบุรี</option>
+			  	<option value="กาฬสินธุ์">กาฬสินธุ์</option>
+			  	<option value="กำแพงเพชร">กำแพงเพชร</option>
+			  	<option value="ขอนแก่น">ขอนแก่น</option>
+			  	<option value="จันทบุรี">จันทบุรี</option>
+			  	<option value="ฉะเชิงเทรา">ฉะเชิงเทรา</option>
+			  	<option value="ชลบุรี">ชลบุรี</option>
+			  	<option value="ชัยนาท">ชัยนาท</option>
+			  	<option value="ชัยภูมิ">ชัยภูมิ</option>
+			  	<option value="ชุมพร">ชุมพร</option>
+			  	<option value="ตรัง">ตรัง</option>
+			  	<option value="ตราด">ตราด</option>
+			  	<option value="ตาก">ตาก</option>
+			  	<option value="นครนายก">นครนายก</option>
+			  	<option value="นครปฐม">นครปฐม</option>
+			  	<option value="นครพนม">นครพนม</option>
+			  	<option value="นครราชสีมา">นครราชสีมา</option>
+			  	<option value="นครศรีธรรมราช">นครศรีธรรมราช</option>
+			  	<option value="นครสวรรค์">นครสวรรค์</option>
+			  	<option value="นนทบุรี">นนทบุรี</option>
+			  	<option value="นราธิวาส">นราธิวาส</option>
+			  	<option value="น่าน">น่าน</option>
+			  	<option value="บึงกาฬ">บึงกาฬ</option>
+			  	<option value="บุรีรัมย์">บุรีรัมย์</option>
+			  	<option value="ปทุมธานี">ปทุมธานี</option>
+			  	<option value="ประจวบคีรีขันธ์">ประจวบคีรีขันธ์</option>
+			  	<option value="ปราจีนบุรี">ปราจีนบุรี</option>
+			  	<option value="ปัตตานี">ปัตตานี</option>
+			  	<option value="พระนครศรีอยุธยา">พระนครศรีอยุธยา</option>
+			  	<option value="พะเยา">พะเยา</option>
+			  	<option value="พังงา">พังงา</option>
+			  	<option value="พัทลุง">พัทลุง</option>
+			  	<option value="พิจิตร">พิจิตร</option>
+			  	<option value="พิษณุโลก">พิษณุโลก</option>
+			  	<option value="ภูเก็ต">ภูเก็ต</option>
+			  	<option value="มหาสารคาม">มหาสารคาม</option>
+			  	<option value="มุกดาหาร">มุกดาหาร</option>
+			  	<option value="ยะลา">ยะลา</option>
+			  	<option value="ยโสธร">ยโสธร</option>
+			  	<option value="ระนอง">ระนอง</option>
+			  	<option value="ระยอง">ระยอง</option>
+			  	<option value="ราชบุรี">ราชบุรี</option>
+			  	<option value="ร้อยเอ็ด">ร้อยเอ็ด</option>
+			  	<option value="ลพบุรี">ลพบุรี</option>
+			  	<option value="ลำปาง">ลำปาง</option>
+			  	<option value="ลำพูน">ลำพูน</option>
+			  	<option value="ศรีสะเกษ">ศรีสะเกษ</option>
+			  	<option value="สกลนคร">สกลนคร</option>
+			  	<option value="สงขลา">สงขลา</option>
+			  	<option value="สตูล">สตูล</option>
+			  	<option value="สมุทรปราการ">สมุทรปราการ</option>
+			  	<option value="สมุทรสงคราม">สมุทรสงคราม</option>
+			  	<option value="สมุทรสาคร">สมุทรสาคร</option>
+			  	<option value="สระบุรี">สระบุรี</option>
+			  	<option value="สระแก้ว">สระแก้ว</option>
+			  	<option value="สิงห์บุรี">สิงห์บุรี</option>
+			  	<option value="สุพรรณบุรี">สุพรรณบุรี</option>
+			  	<option value="สุราษฎร์ธานี">สุราษฎร์ธานี</option>
+			  	<option value="สุรินทร์">สุรินทร์</option>
+			  	<option value="สุโขทัย">สุโขทัย</option>
+			  	<option value="หนองคาย">หนองคาย</option>
+			  	<option value="หนองบัวลำภู">หนองบัวลำภู</option>
+			  	<option value="อำนาจเจริญ">อำนาจเจริญ</option>
+			  	<option value="อุดรธานี">อุดรธานี</option>
+			  	<option value="อุตรดิตถ์">อุตรดิตถ์</option>
+			  	<option value="อุทัยธานี">อุทัยธานี</option>
+			  	<option value="อุบลราชธานี">อุบลราชธานี</option>
+			  	<option value="อ่างทอง">อ่างทอง</option>
+			  	<option value="เชียงราย">เชียงราย</option>
+			  	<option value="เชียงใหม่">เชียงใหม่</option>
+			  	<option value="เพชรบุรี">เพชรบุรี</option>
+			  	<option value="เพชรบูรณ์">เพชรบูรณ์</option>
+			  	<option value="เลย">เลย</option>
+			  	<option value="แพร่">แพร่</option>
+			  	<option value="แม่ฮ่องสอน">แม่ฮ่องสอน</option>
+			</select>
+			
+			<label for="postalCode">รหัสไปรษณีย์*</label>
+
+			<input style="text-align: center;" type="text" id="postalCode" name="postalCode" required="" placeholder="xxxxx">
+
+			<label for="phoneNumber">โทรศัพท์มือถือ*</label>
+
+			<span title="ใส่เลขเบอร์โทรศัพท์ทั้ง10ตัวโดยไม่ต้องมีขีดคั่น">
+				<input style="text-align: center;" type="text" id="phoneNumber" name="phoneNumber" required="" placeholder="0xx-xxx-xxxx" pattern="0[0-9]{9}">
+			</span>
+
+			<label for="houseNumberC">โทรศัพท์บ้าน(ถ้ามี)</label>
+
+			<span title="ใส่เลขเบอร์โทรศัพท์ทั้ง10ตัวโดยไม่ต้องมีขีดคั่น">
+				<input style="text-align: center;" type="text" id="houseNumberC" name="houseNumberC" placeholder="01x-xxx-xxxx" pattern="01[0-9]{8}">
+			</span>
+
+		<br><br><br>
+			<hr class="line">
+			<div class="infohead"><h3 style=" text-align: left; margin-bottom: 40px;" >ประสงค์จะยื่นคำร้องเรื่อง</h3></div>
+			<label>
+				<b>จำนวนขอเพิ่มรายวิชา
+				  <input
+					type="button"
+					style="width: 2em"
+					onclick="delValue('v1')"
+					value="-"
+				  />
+				  <label id="v1"> 1 </label>
+				  <input
+					type="button"
+					style="width: 2em"
+					onclick="addValue('v1')"
+					value="+"
+				  /> &emsp;
+				  ภาคการเรียน-ปี</b>
+				  <input type="text" id="AddYear" >
+				  </label>
+			  <br /><br />
+	
+
+			  <table id="Add" width="100%">
+				  <tr>
+						<th style="width:5%">ลำดับ</th>
+						<th style="width:10%">รหัสวิชา</th>
+						<th style="width:20%">ชื่อวิชา</th>
+						<th style="width:15%">Section</th>
+						<th style="width:15%">วันเวลา</th>
+						<th style="width:10%">หน่วยกิต</th>
+						<th style="width:15%">ชื่อผู้สอน</th>
+						<th style="width:10%">ผู้สอนอนุญาต</th>
+				  </tr>
+				  <tr>
+					<td>1</td>
+					<td>
+					  <input
+						class="inputtable"
+						type="text"
+						id="codesubject1"
+						style="width: 80px; height: 30px;"
+						required
+						oninvalid="this.setCustomValidity('กรุณากรอกข้อมูล')"
+						oninput="this.setCustomValidity('')"
+					  />
+					</td>
+					<td>
+					  <input
+						class="inputtable"
+						type="text"
+						id="subject1"
+						required
+						style="width: 200px; height: 30px;"
+						oninvalid="this.setCustomValidity('กรุณากรอกข้อมูล')"
+						oninput="this.setCustomValidity('')"
+					  />
+					</td>
+					<td>
+					  <input
+						class="inputtable"
+						type="text"
+						id="section1"
+						required
+						oninvalid="this.setCustomValidity('กรุณากรอกข้อมูล')"
+						style="width: 100px; height: 30px;"
+						oninput="this.setCustomValidity('')"
+					  />
+					</td>
+					<td>
+					  <input
+						class="inputtable"
+						type="text"
+						id="datetime1"
+						style="font-size: 14px; width: 180px; height: 30px;"
+					  />
+					</td>
+					<td>
+					  <input
+					  class="inputtable"
+						type="number"
+						id="value1"
+						required
+						style="width: 50px; height: 30px;"
+						oninvalid="this.setCustomValidity('กรุณากรอกข้อมูล')"
+						oninput="this.setCustomValidity('')"
+						/>
+					</td>
+					<td>
+					  <input
+					  class="inputtable"
+						type="text"
+						id="teacher1"
+						style="width: 100px; height: 30px;"
+						required
+						oninvalid="this.setCustomValidity('กรุณากรอกข้อมูล')"
+						oninput="this.setCustomValidity('')"
+					  />
+					</td>  
+					<td>
+					  <input
+					  class="inputtable"
+						type="checkbox"
+						id="tapprove1"
+						style="height:30px; width: 30px; margin-top: 10px;"
+					  />
+					</td>
+				  </tr>
+			  </table>
+			  <br />
+			  <label
+				><b
+				  >จำนวนขอถอนรายวิชา
+				  <input
+					type="button"
+					style="width: 2em"
+					onclick="delValue('v2')"
+					value="-"
+				  />
+				  <label id="v2"> 1 </label>
+				  <input
+					type="button"
+					style="width: 2em"
+					onclick="addValue('v2')"
+					value="+"
+				  />&emsp;
+				  ภาคการเรียน-ปี</b>
+				  <input type="text" id="DropYear" >
+				 </b>
+				  </label><br><br>
+		
+			  <table id="Drop" width="100%">
+				<thead>
+					<tr>
+						<th style="width:5%">ลำดับ</th>
+						<th style="width:10%">รหัสวิชา</th>
+						<th style="width:20%">ชื่อวิชา</th>
+						<th style="width:15%">Section</th>
+						<th style="width:15%">วันเวลา</th>
+						<th style="width:10%">หน่วยกิต</th>
+						<th style="width:15%">ชื่อผู้สอน</th>
+						<th style="width:10%">ผู้สอนอนุญาต</th>
+
+					</tr>
+				  </thead>
+				  <tbody>
+					<tr>
+					  <td>1</td>
+					  <td>
+						<input
+						  class="inputtable"
+						  type="text"
+						  id="codesubject1"
+						  style="width: 80px; height: 30px;"
+						  required
+						  oninvalid="this.setCustomValidity('กรุณากรอกข้อมูล')"
+						  oninput="this.setCustomValidity('')"
+						/>
+					  </td>
+					  <td>
+						<input
+						  class="inputtable"
+						  type="text"
+						  id="subject1"
+						  required
+						  style="width: 200px; height: 30px;"
+						  oninvalid="this.setCustomValidity('กรุณากรอกข้อมูล')"
+						  oninput="this.setCustomValidity('')"
+						/>
+					  </td>
+					  <td>
+						<input
+						  class="inputtable"
+						  type="text"
+						  id="section1"
+						  required
+						  oninvalid="this.setCustomValidity('กรุณากรอกข้อมูล')"
+						  style="width: 100px; height: 30px;"
+						  oninput="this.setCustomValidity('')"
+						/>
+					  </td>
+					  <td>
+						<input
+						  class="inputtable"
+						  type="text"
+						  id="datetime1"
+						  style="font-size: 14px; width: 180px; height: 30px;"
+						/>
+					  </td>
+					  <td>
+						<input
+						class="inputtable"
+						  type="number"
+						  id="value1"
+						  required
+						  style="width: 50px; height: 30px;"
+						  oninvalid="this.setCustomValidity('กรุณากรอกข้อมูล')"
+						  oninput="this.setCustomValidity('')"
+						  />
+					  </td>
+					  <td>
+						<input
+						class="inputtable"
+						  type="text"
+						  id="teacher1"
+						  style="width: 100px; height: 30px;"
+						  required
+						  oninvalid="this.setCustomValidity('กรุณากรอกข้อมูล')"
+						  oninput="this.setCustomValidity('')"
+						/>
+					  </td>  
+					  <td>
+						<input
+						class="inputtable"
+						  type="checkbox"
+						  id="tapprove1"
+						  style="height:30px; width: 30px; margin-top: 10px;"
+						/>
+					  </td>
+					</tr>
+				  </tbody>
+				  </table>
+
+				  <br>
+
+				  <b>รายวิชาที่ต้องการศึกษาข้ามรายวิชา
+					<input
+					  type="button"
+					  style="width: 2em"
+					  onclick="delValue('v3')"
+					  value="-"
+					/>
+					<label id="v3"> 1 </label>
+					<input
+					  type="button"
+					  style="width: 2em"
+					  onclick="addValue('v3')"
+					  value="+"
+					/>&emsp;
+					ภาคการเรียน-ปี</b>
+					<input type="text" id="CrossYear" >
+					</b
+				  ></label
+				><br /><br />
+	  
+				<table id="Cross" width="100%">
+				  <thead>
+					<tr>
+					  <th style="width:5%">ลำดับ</th>
+						<th style="width:10%">รหัสวิชา</th>
+						<th style="width:20%">ชื่อวิชา</th>
+						<th style="width:15%">Section</th>
+						<th style="width:15%">วันเวลา</th>
+						<th style="width:10%">หน่วยกิต</th>
+						<th style="width:15%">ชื่อผู้สอน</th>
+						<th style="width:10%">ผู้สอนอนุญาต</th>
+					</tr>
+				  </thead>
+				  <tbody>
+					<tr>
+					  <td>1</td>
+					  <td>
+						<input
+						  class="inputtable"
+						  type="text"
+						  id="codesubject1"
+						  style="width: 80px; height: 30px;"
+						  required
+						  oninvalid="this.setCustomValidity('กรุณากรอกข้อมูล')"
+						  oninput="this.setCustomValidity('')"
+						/>
+					  </td>
+					  <td>
+						<input
+						  class="inputtable"
+						  type="text"
+						  id="subject1"
+						  required
+						  style="width: 200px; height: 30px;"
+						  oninvalid="this.setCustomValidity('กรุณากรอกข้อมูล')"
+						  oninput="this.setCustomValidity('')"
+						/>
+					  </td>
+					  <td>
+						<input
+						  class="inputtable"
+						  type="text"
+						  id="section1"
+						  required
+						  oninvalid="this.setCustomValidity('กรุณากรอกข้อมูล')"
+						  style="width: 100px; height: 30px;"
+						  oninput="this.setCustomValidity('')"
+						/>
+					  </td>
+					  <td>
+						<input
+						  class="inputtable"
+						  type="text"
+						  id="datetime1"
+						  style="font-size: 14px; width: 180px; height: 30px;"
+						/>
+					  </td>
+					  <td>
+						<input
+						class="inputtable"
+						  type="number"
+						  id="value1"
+						  required
+						  style="width: 50px; height: 30px;"
+						  oninvalid="this.setCustomValidity('กรุณากรอกข้อมูล')"
+						  oninput="this.setCustomValidity('')"
+						  />
+					  </td>
+					  <td>
+						<input
+						class="inputtable"
+						  type="text"
+						  id="teacher1"
+						  style="width: 100px; height: 30px;"
+						  required
+						  oninvalid="this.setCustomValidity('กรุณากรอกข้อมูล')"
+						  oninput="this.setCustomValidity('')"
+						/>
+					  </td>  
+					  <td>
+						<input
+						class="inputtable"
+						  type="checkbox"
+						  id="tapprove1"
+						  style="height:30px; width: 30px; margin-top: 10px;"
+						/>
+					  </td>
+					</tr>
+				  </tbody>
+				</table>
+
+				  <h3 style="font-size: 15px;  text-align: left;" >ขอลาออก&emsp;
+					ตั้งแต่ภาคการเรียน-ปี
+					<input type="text" id="resignYear" >
+					</h3>
+				 
+					<h3 style="font-size: 15px;  text-align: left;" >อื่นๆ&emsp;
+					<input type="text" id="other">
+					</h3>
+				   <br>
+				   <hr class="line">
+				   <div class="infohead">
+					<h3>เหตุผลที่ต้องการยื่นคำร้อง</h3>
+					</div>
+					<textarea id="reason" name="reason" cols = "150" rows="10"></textarea><br><br>
+				   <hr class="line">
+				   <div style = "text-align: center;" class="forminfo;" >
+					<h3 style="font-size: 15px; color: rgb(184, 41, 36);">แนบ Link ของเอกสารที่เกี่ยวข้อง</h3>
+					<input type="button" class="button2" value="เพิ่ม Link" onclick="addLink('fileLink')" >&emsp;
+					<input type="button" class="button2" value="ลด Link" onclick="deleteRows('fileLink')" > </h3>
+					<center><table id="fileLink">
+					<br><br>
+					 <tr>
+					  <th style="width:25%">ประเภทของเอกสาร</th>
+					  <th style="width:25%">Link</th>
+					 </tr>
+					</table></center>
+				   </div>
+				   <br><br>
+				   <hr class="line"><br>
+				   <div style = "text-align: center;" class="forminfo;" >
+					<input type="button" class="submitform" value="ส่งฟอร์ม" style="font-family: 'Mitr', sans-serif;" onclick="checkEverything()" >
+				   
+				   </div>			  
+	</div>
+</body>
+
+</html>

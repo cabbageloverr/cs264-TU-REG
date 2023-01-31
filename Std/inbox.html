@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact</title>
+    <link rel="stylesheet" href="/css/inbox.css">
+</head>
+<body onload="loadDoc()">
+    <div class="container"></div>
+
+        <section class="header_area">
+            
+                <div class="header">
+                    <div class="header_pic">
+                        <img src="/img/TUlogo.png" alt="logo">
+                    </div>
+
+                    <div class="header_info">
+                        <div class="header_infoth">
+                            <h1>สำนักงานทะเบียนนักศึกษา</h1>
+                        </div>
+                        <div class="header_infoen">
+                            <h1>OFFICE OF THE REGISTRAR</h1>
+                        </div>
+                    </div>
+
+                </div>
+        </section>
+
+        <div class="infoandtabs_area">
+            <aside class="tabs">
+                <div onclick="main_page()">
+                    <h2>หน้าหลัก</h2>
+                </div>
+                <div id="tb-petition "class="tab-petition" onclick="writeForm()">
+                    <h2>กรอกฟอร์มคำร้อง</h2>
+                </div>
+                <div id="tb-petitionback"class="tab-petitionback" onclick="checkAll()">
+                    <h2>ติดตามสถานะ</h2>
+                </div>
+                <div id="tb-petitionback"class="tab-petitionback" onclick="inbox()">
+                    <h2>รับข้อความ</h2>
+                </div>
+                <div id="tb-petitionback"class="tab-petitionback" onclick="logout()">
+                    <h2>ออกจากระบบ</h2>
+                </div>
+            </aside>
+
+            <section class="info_area">
+
+                <div style="padding-top: 0.1em;"> 
+                    <div>
+                        <p class = "top">
+                        ข้อความตอบกลับ
+                        </p>
+                    </div>
+                    <div >
+                        <section class = "medium" >
+                            <form>
+                                <label  style="margin-left:765px;" >วันที่</label><br>
+                                    <div class="input-group" style="text-align: right;">
+                                        <input type="date" style ="text-align: center;" id="date">
+                                    </div>
+                                <div class="input-row">
+                                    <div class="input-group">
+                                        <label style="margin-left:15px;">ชื่อผู้ติดต่อ</label><br>
+                                        <input type="text" id="From">
+                                    </div>
+                                </div>
+
+                                <label style="margin-left:18px;">ข้อความ</label><br><br>
+                                <textarea rows="8" id="message"></textarea>
+
+                                
+
+                            </form> 
+                            <center><button class="button" onclick="submitSeen()">รับทราบ</button></center>
+                        </section>   
+
+                    </div>
+
+            </section>
+            </div>
+    </div>
+</body>
+<script src='js/inbox.js'></script>
+</html>
